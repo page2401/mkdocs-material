@@ -1,0 +1,63 @@
+site_name: "MkDocs Material 9.8 基准实测子站"
+site_description: "Python 生态标杆文档框架 MkDocs 1.6.1 + Material for MkDocs 9.8.2 基准实测子站"
+site_url: https://page.2401.xyz/mkdocs-material/
+repo_url: https://github.com/page2401/mkdocs-material
+repo_name: page2401/mkdocs-material
+use_directory_urls: true
+
+theme:
+  name: material
+  language: zh
+  font: false
+  features:
+    - navigation.indexes
+    - navigation.expand
+    - content.code.copy
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: 切换至深色模式
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: 切换至浅色模式
+
+nav:
+  - "00. 概览与版本档案": index.md
+  - "01. 专属标注与元数据": 01-annotations.md
+  - "02. 流程图与时序图": 02-diagrams.md
+  - "03. 数学公式排版": 03-math.md
+  - "04. 目录结构与路由取舍":
+      - 04-directory/index.md
+      - "嵌套子章节 (nested)":
+          - "嵌套子页 A：排序前缀与 URL 纯净度权衡": 04-directory/nested/01-order-and-url.md
+          - "嵌套子页 B：多级子目录与侧边栏同步机制": 04-directory/nested/02-sidebar-sync.md
+
+markdown_extensions:
+  - tables
+  - admonition
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_css:
+  - stylesheets/katex.min.css
+
+extra_javascript:
+  - javascripts/katex.min.js
+  - javascripts/auto-render.min.js
+  - javascripts/mermaid.min.js
+  - javascripts/mathjax-or-katex.js
