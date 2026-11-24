@@ -21,7 +21,7 @@ Python 构建链通过虚拟环境 `.venv` 与 `requirements.txt` 严格锁定�
 | `katex` (vendored) | `0.19.1` | 配合 `arithmatex (generic: true)` 在同源本地完成公式排版 |
 | `mermaid` (vendored) | `12.3.0` | 配合 `superfences` 自定义 `mermaid` 围栏实现零 CDN 矢量图表渲染 |
 
-## 五大标准基准章节导览
+## 六大标准基准章节导览
 
 | 章节路径 | 测试维度 | 相对母版 `docs/*.md` 的核心派生改造点 |
 | :--- | :--- | :--- |
@@ -29,3 +29,4 @@ Python 构建链通过虚拟环境 `.venv` 与 `requirements.txt` 严格锁定�
 | [`02-diagrams.md`](./02-diagrams.md) | 流程图与时序图 | 正文代码块零改动，在 `mkdocs.yml` 配置 `pymdownx.superfences` 自定义 `mermaid` 围栏 |
 | [`03-math.md`](./03-math.md) | 数学公式排版 | 正文公式零改动，由 `pymdownx.arithmatex: { generic: true }` 无损保护反斜杠并交由 KaTeX 0.19.1 渲染 |
 | [`04-directory/`](./04-directory/index.md) | 目录结构与路由取舍 | 100% 保留母版相对 `.md` 互链（构建期自动重写），但在 `mkdocs.yml` 维护显式 `nav:` 树防止结构失序 |
+| [`05-code-blocks.md`](./05-code-blocks.md) | 高阶代码块与语法高亮 | 基于 `pymdownx.highlight` 启用 `title` / `hl_lines` / `linenums` 属性，配合 `pymdownx.tabbed`（`=== "Node.js"` + 4 空格缩进）实现多语言标签组 |

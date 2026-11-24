@@ -37,6 +37,7 @@ nav:
       - "嵌套子章节 (nested)":
           - "嵌套子页 A：排序前缀与 URL 纯净度权衡": 04-directory/nested/01-order-and-url.md
           - "嵌套子页 B：多级子目录与侧边栏同步机制": 04-directory/nested/02-sidebar-sync.md
+  - "05. 高阶代码块与语法高亮": 05-code-blocks.md
 
 markdown_extensions:
   - tables
@@ -44,7 +45,11 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.highlight:
       anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
   - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
